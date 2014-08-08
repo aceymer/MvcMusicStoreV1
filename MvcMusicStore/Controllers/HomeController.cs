@@ -1,5 +1,4 @@
 ﻿using MvcMusicStore.Models;
-using MvcMusicStore.Models.FakeDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,6 @@ namespace MvcMusicStore.Controllers
         public ActionResult About(int id)
         {
             ViewBag.Message = "Your application description page.";
-            ViewBag.Details = new FakeDB().GetDetail(id);
             return View();
         }
 
