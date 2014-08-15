@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MvcMusicStore.DAL
 {
-    public class MusicStoreInitializer : System.Data.Entity.DropCreateDatabaseAlways<MvcMusicStoreContext>
+    public class MusicStoreInitializer : System.Data.Entity.CreateDatabaseIfNotExists<MvcMusicStoreContext>
     {
         protected override void Seed(MvcMusicStoreContext context)
         {
@@ -28,7 +28,7 @@ namespace MvcMusicStore.DAL
             };
             artists.ForEach(s => context.Artists.Add(s));
             context.SaveChanges();
-         
+
             var albums = new List<Album>
             {
                 new Album{ArtistId = 1, GenreId = 1, Price = 20M, Title="The Album 1"},
@@ -36,7 +36,7 @@ namespace MvcMusicStore.DAL
                 new Album{ArtistId = 2, GenreId = 2, Price = 202M, Title="The Album 3"},
                 new Album{ArtistId = 3, GenreId = 3, Price = 103M, Title="The Album 4"},
             };
-           
+
             albums.ForEach(s => context.Albums.Add(s));
             context.SaveChanges();
         }
