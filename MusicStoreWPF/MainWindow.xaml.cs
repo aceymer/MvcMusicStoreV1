@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicStoreWPF.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,12 @@ namespace MusicStoreWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> Cities = new List<string> {"Kolding", "Esbjerg", "Køge", "Nordby"};
-
         public MainWindow()
         {
             InitializeComponent();
-            CitiesCombo.ItemsSource = Cities;
+            
+            CountriesCombo.ItemsSource = new FakeCountryDb().GetCountries();
+
         }
 
         private void AddCalcBtn_Click(object sender, RoutedEventArgs e)
@@ -42,19 +43,67 @@ namespace MusicStoreWPF
 
         private void SubstractCalcBtn_Click(object sender, RoutedEventArgs e)
         {
+            int field1Value;
+            int field2Value;
 
+            if (int.TryParse(SubstractInput1Txt.Text, out field1Value) &&
+                int.TryParse(SubstractInput2Txt.Text, out field2Value))
+            {
+                SubstractResultTxt.Text = (field1Value - field2Value).ToString();
+            }
         }
 
         private void CountryCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch (CitiesCombo.SelectedItem as string)
+            if (CountriesCombo.SelectedItem is Country) {
+                CountryInfoTxt.Text = (CountriesCombo.SelectedItem as Country).Info;
+            }
+        }
+
+        private void MultiplyInputTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int field1Value;
+            int field2Value;
+
+            if (int.TryParse(MultiplyInput1Txt.Text, out field1Value) &&
+                int.TryParse(MultiplyInput2Txt.Text, out field2Value))
             {
-                case "Kolding":
-                    CountryInfoTxt.Text = "Kolding";
-                    break;
-                default:
-                    CountryInfoTxt.Text = "Not Kolding";
-                    break;
+                MultiplyImg.Visibility = Visibility.Hidden;
+                MultiplyResultTxt.Text = (field1Value * field2Value).ToString();
+            }
+            else
+            {
+                MultiplyImg.Visibility = Visibility.Visible;
+                MultiplyImg.ToolTip = "Both fields must be a integer value";
+                MultiplyResultTxt.Text = "-";
+            }
+        }
+
+        private void DivideInputTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int field1Value;
+            int field2Value;
+
+            if (int.TryParse(DivideInput1Txt.Text, out field1Value) &&
+                int.TryParse(DivideInput2Txt.Text, out field2Value))
+            {
+                
+                if (field2Value != 0)
+                {
+                    DevideImg.Visibility = Visibility.Hidden;
+                    DivideResultTxt.Text = ((double)field1Value / (double)field2Value).ToString();
+                }
+                else 
+                {
+                    DevideImg.Visibility = Visibility.Visible;
+                    DevideImg.ToolTip = "When dividing with zero the result is really huge!";
+                }
+            }
+            else
+            {
+                DevideImg.Visibility = Visibility.Visible;
+                DevideImg.ToolTip = "Both fields must be a integer value";
+                DivideResultTxt.Text = "-";
             }
         }
 

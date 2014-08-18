@@ -10,17 +10,17 @@
                 <TextBox x:Name="AddInput2Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
                 <TextBox IsEnabled="False" x:Name="AddResultTxt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button x:Name="AddCalcBtn" Content="Calculate" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="True" Margin="10,0,0,0" Click="AddCalcBtn_Click"/>
+                <Button x:Name="AddCalcBtn" Content="Calculate" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="True" Margin="10,0,0,0" Click="AddCalcBtn_Click" Padding="3"/>
             </StackPanel>
         </Border>
         <Border BorderBrush="#FF9AE482" BorderThickness="2,2,2,2" Margin="0,5,0,0">
             <StackPanel Height="60" Margin="5" VerticalAlignment="Top" Orientation="Horizontal">
-                <TextBox x:Name="SubtractInput1Txt1" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <TextBox x:Name="SubstractInput1Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,0,0"/>
                 <Label Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
-                <TextBox x:Name="SubstractInput1Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="SubstractInput2Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
                 <TextBox IsEnabled="False" x:Name="SubstractResultTxt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button x:Name="SubstractCalcBtn" Content="Calculate" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="True" Margin="10,0,0,0" Click="SubstractCalcBtn_Click">
+                <Button x:Name="SubstractCalcBtn" Content="Calculate" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="True" Margin="10,0,0,0" Click="SubstractCalcBtn_Click" Padding="3">
                     <Button.Background >
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="Green" Offset="0.0" />
@@ -32,9 +32,9 @@
         </Border>
         <Border BorderBrush="#FF82B3E4" BorderThickness="2,2,2,2" Margin="0,5,0,0">
             <StackPanel Height="60" Margin="5" VerticalAlignment="Top" Orientation="Horizontal">
-                <TextBox x:Name="MultiplyInput1Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,0,0" />
+                <TextBox x:Name="MultiplyInput1Txt" TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,0,0" TextChanged="MultiplyInputTxt_TextChanged" />
                 <Label Content="x" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
-                <TextBox x:Name="MultiplyInput2Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBox x:Name="MultiplyInput2Txt" TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="MultiplyInputTxt_TextChanged" />
                 <Label Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
                 <TextBox IsEnabled="False" x:Name="MultiplyResultTxt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Image x:Name="MultiplyImg" Width="48" Height="48" Margin="15,5,5,5" Source="pack://siteoforigin:,,,/Resources/App-error-icon (1).png" Visibility="Hidden"/>
@@ -42,19 +42,19 @@
         </Border>
         <Border BorderBrush="#FFD982E4" BorderThickness="2,2,2,2" Margin="0,5,0,0">
             <StackPanel Height="60" Margin="5" VerticalAlignment="Top" Orientation="Horizontal">
-                <TextBox x:Name="DevideInput1Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,0,0" />
+                <TextBox x:Name="DivideInput1Txt" TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,0,0" TextChanged="DivideInputTxt_TextChanged" />
                 <Label Content="/" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
-                <TextBox x:Name="DevideInput2Txt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBox x:Name="DivideInput2Txt" TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="DivideInputTxt_TextChanged"/>
                 <Label Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEE0404" FontSize="28" Margin="0,6,0,9" Width="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold"/>
-                <TextBox IsEnabled="False" x:Name="DevideResultTxt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Image x:Name="DevideImg" Width="48" Height="48" Margin="15,5,5,5" Source="pack://siteoforigin:,,,/Resources/App-error-icon (1).png"/>
+                <TextBox IsEnabled="False" x:Name="DivideResultTxt" TextWrapping="Wrap" Text="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Image x:Name="DevideImg" Width="48" Height="48" Margin="15,5,5,5" Source="pack://siteoforigin:,,,/Resources/App-error-icon (1).png" Visibility="Hidden"/>
             </StackPanel>
         </Border>
         <Border BorderBrush="#FFDBE482" BorderThickness="2,2,2,2" Margin="0,5,0,0">
             <StackPanel Height="160" Margin="5" VerticalAlignment="Top" Orientation="Horizontal">
-                <ComboBox x:Name="CitiesCombo" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" SelectionChanged="CountryCombo_SelectionChanged"/>
+                <ComboBox x:Name="CountriesCombo" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" SelectionChanged="CountryCombo_SelectionChanged"/>
                 <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,0" Width="315">
-                    <TextBlock x:Name="CountryInfoTxt" Margin="5,5,9,5" Text="ost" IsEnabled="False" />
+                    <TextBlock x:Name="CountryInfoTxt" Margin="5,5,9,5" IsEnabled="False" />
                 </Border>
             </StackPanel>
         </Border>
