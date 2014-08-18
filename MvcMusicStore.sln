@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMusicStore", "MvcMusicSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMusicStore.Tests", "MvcMusicStore.Tests\MvcMusicStore.Tests.csproj", "{3135422A-F9F3-475E-9CEF-7AD17C63C307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreWPF", "MusicStoreWPF\MusicStoreWPF.csproj", "{5785632A-14CD-4206-9A0A-5120434715AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFExampleCrashCourse", "WPFExampleCrashCourse\WPFExampleCrashCourse.csproj", "{5785632A-14CD-4206-9A0A-5120434715AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
